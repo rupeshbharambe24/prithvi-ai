@@ -1,0 +1,13 @@
+# Python virtual environment (local, do not commit)
+prithvi-ai/
+
+__pycache__/
+*.pyc
+*.pyo
+.env
+*.local
+.vscode/
+.idea/
+.DS_Store
+node_modules/
+

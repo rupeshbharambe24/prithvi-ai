@@ -1,0 +1,6 @@
+[submodule "backend"]
+	path = backend
+	url = https://github.com/rupeshbharambe24/prithvi-ai-backend.git
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/rupeshbharambe24/prithvi-ai-frontend.git
