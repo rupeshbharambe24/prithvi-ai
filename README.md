@@ -11,7 +11,7 @@
 [![Backend](https://img.shields.io/badge/Backend-FastAPI%20%C2%B7%20XGBoost-009688?logo=fastapi&logoColor=white)](https://github.com/rupeshbharambe24/prithvi-ai-backend)
 [![Frontend](https://img.shields.io/badge/Frontend-React%20%C2%B7%20Vite%20%C2%B7%20TS-61DAFB?logo=react&logoColor=black)](https://github.com/rupeshbharambe24/prithvi-ai-frontend)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](#-license)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
 
 </div>
@@ -42,6 +42,7 @@ included here as git submodules:
 - [Quick start](#-quick-start)
 - [Repository layout](#-repository-layout)
 - [Working with submodules](#-working-with-submodules)
+- [Related repositories](#-related-repositories)
 - [License](#-license)
 
 ---
@@ -189,13 +190,26 @@ Open the printed URL (usually `http://localhost:5173`).
 
 **Demo login:** `admin@example.com` / `Admin123!`
 
+Or start both at once with `bash start.sh` (backend on `:8000`, frontend on `:5173`).
+
+<details>
+<summary><b>🗓️ Scheduled weekly run (Windows)</b></summary>
+
+`run_weekly.ps1` runs `run_pipeline daily` then `run_pipeline weekly` from `backend/` and writes a
+transcript to `pipeline-logs/pipeline_<timestamp>.log`. It expects a virtual environment named
+`prithvi-ai` in the umbrella root (`python -m venv prithvi-ai`, then `pip install -e backend`).
+Schedule `run_weekly.bat` with Task Scheduler, or run it by hand.
+</details>
+
 ## 📂 Repository layout
 
 ```
 prithvi-ai/                  ← this umbrella repo
 ├── backend/                 ← submodule → prithvi-ai-backend
 ├── frontend/                ← submodule → prithvi-ai-frontend
-├── start.sh                 ← launch both for local dev
+├── start.sh                 ← launch both for local dev (bash)
+├── run_weekly.ps1           ← full daily + weekly pipeline run with logging (Windows)
+├── run_weekly.bat           ← double-click wrapper for run_weekly.ps1
 └── README.md
 ```
 
@@ -214,9 +228,18 @@ git commit -m "chore: bump submodule pointers"
 git push
 ```
 
+## 🔗 Related repositories
+
+| Repository | Role |
+|------------|------|
+| **`prithvi-ai`** | This umbrella repo |
+| [`prithvi-ai-backend`](https://github.com/rupeshbharambe24/prithvi-ai-backend) | FastAPI + XGBoost backend, data pipelines, continuous ML loop |
+| [`prithvi-ai-frontend`](https://github.com/rupeshbharambe24/prithvi-ai-frontend) | React operations console |
+| [`prithvi-nexus`](https://github.com/rupeshbharambe24/prithvi-nexus) | Earlier console snapshot (superseded by the frontend) |
+
 ## 📜 License
 
-Released under the **MIT License**.
+Released under the [MIT License](LICENSE) © 2026 Rupesh Bharambe.
 
 <div align="center">
 <sub>Built for resilient public health in a warming world. 🌡️🩺</sub>
